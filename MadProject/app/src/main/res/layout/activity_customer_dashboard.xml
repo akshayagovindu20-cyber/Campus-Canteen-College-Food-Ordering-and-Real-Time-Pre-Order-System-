@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/bg_app">
+
+    <!-- Top Action Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/canteen_orange"
+        android:elevation="4dp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Campus Canteen"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvWelcomeUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Hello, Student 👋"
+                android:textColor="@color/canteen_orange_light"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnMyOrdersNav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_orders"
+                android:contentDescription="My Orders" />
+
+            <RelativeLayout
+                android:id="@+id/btnNotificationsNav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_notifications"
+                    android:contentDescription="Notifications" />
+
+                <TextView
+                    android:id="@+id/tvNotifBadge"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_badge"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnCartNav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_cart"
+                    android:contentDescription="Shopping Cart" />
+
+                <TextView
+                    android:id="@+id/tvCartBadge"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_badge"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/btnProfileNav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_profile"
+                android:contentDescription="Profile" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Main Content Area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- STICKY ORDER READY ALERT BANNER (When customer has a READY order) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardActiveReadyOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/status_ready_bg"
+            app:strokeColor="@color/status_ready"
+            app:strokeWidth="2dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_ready_celebration"
+                        android:contentDescription="Ready Celebration Icon" />
+
+                    <TextView
+                        android:id="@+id/tvActiveReadyHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:text="YOUR ORDER IS READY! 🎉"
+                        android:textColor="@color/canteen_green"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvActiveReadyOrderId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#ORD-1029"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvActiveReadyDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="2x Masala Dosa, 1x Tea • Total: ₹ 130.00\nPlease collect from Counter 1 at Canteen."
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Search Bar -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="@color/divider_color"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/etSearchFood"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@null"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:drawablePadding="10dp"
+                android:hint="Search delicious canteen food..."
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="14sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Category Horizontal RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp" />
+
+        <!-- Food Menu Grid RecyclerView -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshCustomer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFoodMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/tvEmptyMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="No food items found in this canteen category."
+                    android:textColor="@color/text_muted"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Campus Canteen</string>
+    <string name="welcome_back">Welcome back,</string>
+    <string name="tagline">College Canteen Pre-Order System</string>
+
+    <!-- Auth Strings -->
+    <string name="login_title">Login to Campus Canteen</string>
+    <string name="register_title">Create Customer Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string name="no_account_link">Don\'t have an account? Register here</string>
+    <string name="has_account_link">Already have an account? Login here</string>
+    <string name="server_notice">Designated Server Account: Log in with the registered server credentials to manage canteen orders.</string>
+
+    <!-- Dashboard Strings -->
+    <string name="search_hint">Search delicious canteen food...</string>
+    <string name="cat_all">All</string>
+    <string name="cat_breakfast">Breakfast</string>
+    <string name="cat_meals">Meals</string>
+    <string name="cat_snacks">Snacks</string>
+    <string name="cat_beverages">Beverages</string>
+    <string name="cat_desserts">Desserts</string>
+
+    <!-- Order & Cart Strings -->
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="cart_title">My Food Cart</string>
+    <string name="checkout_title">Order Checkout</string>
+    <string name="btn_checkout">Proceed to Checkout</string>
+    <string name="btn_place_order">Place Canteen Order</string>
+    <string name="my_orders_title">My Canteen Orders</string>
+    <string name="order_ready_alert">YOUR ORDER IS READY!</string>
+    <string name="order_ready_sub">Please collect your fresh meal from Counter 1 at the College Canteen!</string>
+    <string name="pickup_slot_label">Select Pickup Slot</string>
+    <string name="payment_method_label">Payment Method</string>
+    <string name="pay_at_counter">Pay Cash/UPI at Canteen Counter</string>
+
+    <!-- Server Strings -->
+    <string name="server_dashboard_title">Server Order Manager</string>
+    <string name="manage_menu_title">Canteen Menu Management</string>
+    <string name="add_food_title">Add New Canteen Item</string>
+    <string name="edit_food_title">Edit Canteen Item</string>
+    <string name="btn_accept_order">Accept &amp; Prepare</string>
+    <string name="btn_mark_ready">Mark ORDER READY</string>
+    <string name="btn_mark_completed">Mark COMPLETED</string>
+    <string name="btn_cancel_order">Cancel Order</string>
+</resources>

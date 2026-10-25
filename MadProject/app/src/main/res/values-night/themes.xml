@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for Dark Mode. -->
+    <style name="Base.Theme.MadProject" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/canteen_orange</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/canteen_orange_light</item>
+        <item name="colorOnPrimaryContainer">@color/canteen_orange_dark</item>
+        <item name="colorSecondary">@color/canteen_green</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/canteen_orange_dark</item>
+        <item name="android:windowBackground">@color/bg_app</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+    </style>
+
+    <style name="Theme.MadProject" parent="Base.Theme.MadProject" />
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Campus Canteen Theme Palette -->
+    <color name="canteen_orange">#E65100</color>
+    <color name="canteen_orange_light">#FFF3E0</color>
+    <color name="canteen_orange_dark">#BF360C</color>
+    <color name="canteen_amber">#FF8F00</color>
+    <color name="canteen_green">#2E7D32</color>
+    <color name="canteen_green_light">#E8F5E9</color>
+    <color name="canteen_red">#D32F2F</color>
+    <color name="canteen_red_light">#FFEBEE</color>
+
+    <!-- Status Colors -->
+    <color name="status_placed">#1976D2</color>
+    <color name="status_placed_bg">#E3F2FD</color>
+    <color name="status_preparing">#F57C00</color>
+    <color name="status_preparing_bg">#FFF3E0</color>
+    <color name="status_ready">#2E7D32</color>
+    <color name="status_ready_bg">#E8F5E9</color>
+    <color name="status_completed">#455A64</color>
+    <color name="status_completed_bg">#ECEFF1</color>
+    <color name="status_cancelled">#D32F2F</color>
+    <color name="status_cancelled_bg">#FFEBEE</color>
+
+    <!-- Neutral UI Colors -->
+    <color name="bg_app">#F5F7FA</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="divider_color">#EEEEEE</color>
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#666666</color>
+    <color name="text_muted">#9E9E9E</color>
+
+    <!-- Badges -->
+    <color name="badge_bg">#D32F2F</color>
+    <color name="badge_text">#FFFFFF</color>
+</resources>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/bg_app">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_food_placeholder"
+            android:contentDescription="Campus Canteen Logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Join Campus Canteen"
+            android:textColor="@color/canteen_orange_dark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Register your Customer or Food Server account"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/card_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Role Selector -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I am registering as:"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rgRole"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbRoleCustomer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="Customer / Student"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbRoleServer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Food Server"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:hint="Full Name"
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/canteen_orange_dark"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/canteen_orange"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Phone Number field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:hint="Phone Number (e.g. 9876543210)"
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/canteen_orange_dark"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/canteen_orange"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Optional Canteen Name field for Server -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCanteenName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:hint="Canteen / Stall Name (e.g. Main Canteen)"
+                    android:textColorHint="@color/text_secondary"
+                    android:visibility="gone"
+                    app:hintTextColor="@color/canteen_orange_dark"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/canteen_orange"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegCanteenName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Canteen Gallery Image Picker Container for Server -->
+                <LinearLayout
+                    android:id="@+id/layoutCanteenImagePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/canteen_orange"
+                        app:strokeWidth="1.5dp"
+                        app:cardBackgroundColor="@color/canteen_orange_light">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imgCanteenPreview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_food_placeholder"
+                                android:contentDescription="Canteen Photo Preview" />
+
+                            <LinearLayout
+                                android:id="@+id/layoutUploadPrompt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@android:drawable/ic_menu_camera"
+                                    app:tint="@color/canteen_orange_dark"
+                                    android:contentDescription="Camera Icon" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="Tap to Select Canteen Photo"
+                                    android:textColor="@color/canteen_orange_dark"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSelectCanteenImage"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="8dp"
+                        android:text="📷 Choose Photo from Gallery"
+                        android:textColor="@color/canteen_orange_dark"
+                        android:textSize="13sp"
+                        app:strokeColor="@color/canteen_orange" />
+
+                    <TextView
+                        android:id="@+id/tvImageStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="No custom photo selected (default will be used)"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:hint="Password (min 6 chars)"
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/canteen_orange_dark"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/canteen_orange"
+                    app:passwordToggleEnabled="true"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:hint="Confirm Password"
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/canteen_orange_dark"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/canteen_orange"
+                    app:passwordToggleEnabled="true"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/canteen_orange"
+                    android:text="Register Account"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="26dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressRegister"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvLoginLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:padding="8dp"
+                    android:text="Already have an account? Login here"
+                    android:textColor="@color/canteen_orange_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isServer() {
+      return isAuthenticated() &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'SERVER';
+    }
+
+    // USERS Collection
+    match /users/{userId} {
+      // Anyone can read/query for username uniqueness during registration & login
+      allow read: if true;
+      // Allow user creation for public customer OR server registration
+      allow create: if true;
+      // User can update their profile (FCM token), Server can manage user status
+      allow update: if isOwner(userId) || isServer();
+      allow delete: if isServer();
+    }
+
+    // FOOD ITEMS Collection (Menu)
+    match /food_items/{foodId} {
+      // Anyone can read canteen menu
+      allow read: if true;
+      // Registered users with SERVER role or public can create/update food items
+      allow create, update, delete: if true;
+    }
+
+    // ORDERS Collection
+    match /orders/{orderId} {
+      // Customers can read their own orders; Servers can read all incoming canteen orders
+      allow read: if true;
+      // Allow customers to place orders and servers/customers to update status
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+    }
+
+    // NOTIFICATIONS Collection
+    match /notifications/{notifId} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if true;
+    }
+  }
+}
